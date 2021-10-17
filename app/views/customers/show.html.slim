@@ -1,0 +1,90 @@
+.page-header
+  = link_to customers_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_customer_path(@customer), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show customer
+dl.dl-horizontal
+  dt
+    | Id:
+  dd
+    = @customer.id
+  dt
+    | Last name:
+  dd
+    = @customer.last_name
+  dt
+    | First name:
+  dd
+    = @customer.first_name
+  dt
+    | Last kana:
+  dd
+    = @customer.last_kana
+  dt
+    | First kana:
+  dd
+    = @customer.first_kana
+  dt
+    | Gender:
+  dd
+    = @customer.gender
+  dt
+    | Birth:
+  dd
+    = @customer.birth
+  dt
+    | Zip1:
+  dd
+    = @customer.zip1
+  dt
+    | Zip2:
+  dd
+    = @customer.zip2
+  dt
+    | Addr1:
+  dd
+    = @customer.addr1
+  dt
+    | Addr2:
+  dd
+    = @customer.addr2
+  dt
+    | Addr3:
+  dd
+    = @customer.addr3
+  dt
+    | Tel1:
+  dd
+    = @customer.tel1
+  dt
+    | Tel2:
+  dd
+    = @customer.tel2
+  dt
+    | Tel3:
+  dd
+    = @customer.tel3
+  dt
+    | Email:
+  dd
+    = @customer.email
+  dt
+    | Note:
+  dd
+    = @customer.note
+  dt
+    | Deleted at:
+  dd
+    = @customer.deleted_at
+  dt
+    | Created at:
+  dd
+    = @customer.created_at
+  dt
+    | Updated at:
+  dd
+    = @customer.updated_at

@@ -1,0 +1,14 @@
+.page-header
+  = link_to entries_path, class: 'btn btn-default' do
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to @entry, class: 'btn btn-primary' do
+    span.glyphicon.glyphicon-info-sign
+    |  Show 
+  h1
+    | Editing 
+    | entry
+
+= render 'form'
+
+= javascript_pack_tag 'entries_vue'

@@ -1,0 +1,22 @@
+create_table "customers", force: :cascade, comment: "" do |t|
+  t.integer     "status",     default: 0
+  t.string      "last_name"
+  t.string      "first_name"
+  t.string      "last_kana"
+  t.string      "first_kana"
+  t.string      "gender"
+  t.date        "birth"
+  t.string      "zip1"
+  t.string      "zip2"
+  t.string      "addr1"
+  t.string      "addr2"
+  t.string      "addr3"
+  t.string      "tel1"
+  t.string      "tel2"
+  t.string      "tel3"
+  t.string      "email"
+  t.text        "note",       comment: "備考"
+  t.datetime "deleted_at", comment: "削除フラグ"
+  t.datetime "created_at", comment: "作成日"
+  t.datetime "updated_at", comment: "更新日"
+end

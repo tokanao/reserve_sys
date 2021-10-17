@@ -1,0 +1,9 @@
+create_table "systems", force: :cascade, comment: "" do |t|
+  t.string    "name",                                   comment: ""
+  t.integer   "entry_unit",             default: 1,     comment: "予約単位\n1:日単位 2:時間単位"
+  t.boolean   "member_management_flag", default: false, comment: "会員管理フラグ"
+  t.string    :site_url
+  t.datetime "deleted_at", comment: "削除フラグ"
+  t.datetime "created_at", comment: "作成日"
+  t.datetime "updated_at", comment: "更新日"
+end

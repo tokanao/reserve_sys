@@ -1,0 +1,8 @@
+create_table "courses", force: :cascade, comment: "" do |t|
+  t.string    :name,         comment: "コース名"
+  t.text      :note,         comment: "コース説明"
+  t.integer   :price,        commnet: "価格"
+  t.datetime "deleted_at", comment: "削除フラグ"
+  t.datetime "created_at", comment: "作成日"
+  t.datetime "updated_at", comment: "更新日"
+end

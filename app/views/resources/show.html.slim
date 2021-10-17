@@ -1,0 +1,38 @@
+.page-header
+  = link_to resources_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_resource_path(@resource), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show resource
+dl.dl-horizontal
+  dt
+    | Id:
+  dd
+    = @resource.id
+  dt
+    | Name:
+  dd
+    = @resource.name
+  dt
+    | Color:
+  dd
+    = @resource.color
+  dt
+    | Note:
+  dd
+    = @resource.note
+  dt
+    | Deleted at:
+  dd
+    = @resource.deleted_at
+  dt
+    | Created at:
+  dd
+    = @resource.created_at
+  dt
+    | Updated at:
+  dd
+    = @resource.updated_at

@@ -1,0 +1,36 @@
+.modal-content
+  .modal-header
+    = link_to '新規顧客', new_customer_path, remote: true, id: :new_customer, class: 'btn btn-primary'
+  .modal-body
+    .table-responsive
+        table.table.table-striped.table-bordered.table-hover.datatable
+          thead
+            tr
+              th
+                | status
+              th
+                | Name
+              th
+                | Gender
+              th
+                | Tell
+              th
+                | Zip
+              th
+                | Address
+          tbody
+            - @customers.each do | customer |
+              tr data-href="#{new_entry_path(format: :js, customer_id: customer.id, start_time: @start_time, end_time: @end_time)}"
+                td
+                  = customer.status_text
+                td
+                  = customer.name
+                td
+                  = customer.gender
+                td
+                  = customer.full_tell
+                td
+                  = customer.full_zip
+                td
+                  = customer.full_address
+  .modal-footer

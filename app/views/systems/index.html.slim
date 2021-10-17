@@ -1,0 +1,55 @@
+.page-header
+  = link_to new_system_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New System
+  h1
+    | Listing systems
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Id
+        th
+          | Name
+        th
+          | Entry unit
+        th
+          | Member management flag
+        th
+          | Homepage url
+        th
+          | Deleted at
+        th
+          | Created at
+        th
+          | Updated at
+        th
+        th
+        th
+    tbody
+      - @systems.each do | system |
+        tr
+          td
+            = system.id
+          td
+            = system.name
+          td
+            = system.entry_unit
+          td
+            = system.member_management_flag
+          td
+            = link_to system.site_url, system.site_url, target: '_new'
+          td
+            = system.deleted_at
+          td
+            = system.created_at
+          td
+            = system.updated_at
+          td
+            = link_to 'Show', system
+          td
+            = link_to 'Edit', edit_system_path(system) 
+          td
+            = link_to 'Destroy', system, method: :delete, data: { confirm: 'Are you sure?' } 

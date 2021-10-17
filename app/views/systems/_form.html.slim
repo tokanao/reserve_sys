@@ -1,0 +1,12 @@
+= simple_form_for(@system, html: { class: 'form-horizontal' }) do |f|
+  - ar_errors(@system)
+
+  .form-inputs
+    = f.input :name
+    = f.input :entry_unit
+    = f.input :site_url, as: :url
+    = f.input :member_management_flag
+
+  .form-actions
+    .col-sm-offset-2
+      = f.button :submit, class: 'btn btn-primary'

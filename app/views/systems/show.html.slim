@@ -1,0 +1,38 @@
+.page-header
+  = link_to systems_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_system_path(@system), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show system
+dl.dl-horizontal
+  dt
+    | Id:
+  dd
+    = @system.id
+  dt
+    | Name:
+  dd
+    = @system.name
+  dt
+    | Entry unit:
+  dd
+    = @system.entry_unit
+  dt
+    | Member management flag:
+  dd
+    = @system.member_management_flag
+  dt
+    | Deleted at:
+  dd
+    = @system.deleted_at
+  dt
+    | Created at:
+  dd
+    = @system.created_at
+  dt
+    | Updated at:
+  dd
+    = @system.updated_at

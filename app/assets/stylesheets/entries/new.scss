@@ -1,0 +1,14 @@
+.nested-fields .form-inline * {
+  margin: 5px;
+}
+.nested-fields .form-inline {
+  select[name$='course_id]'] {
+    width: 200px;
+  }
+  input[name$='count]'] {
+    width: 50px;
+  }
+  input[name$='charge]'] {
+    width: 100px;
+  }
+}

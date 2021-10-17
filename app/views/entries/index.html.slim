@@ -1,0 +1,69 @@
+.page-header
+  = link_to new_entry_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Entry
+  h1
+    | Listing entries
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Id
+        th
+          | Resource
+        th
+          | Customer
+        th
+          | Start time
+        th
+          | End time
+        th
+          | Term
+        th
+          | Amount
+        th
+          | Details
+        /th
+        /  | Deleted at
+        /th
+        /  | Created at
+        /th
+        /  | Updated at
+        th
+        th
+        th
+    tbody
+      - @entries.each do | entry |
+        tr
+          td
+            = entry.id
+          td
+            = entry.resource.name
+          td
+            = entry.customer.name
+          td
+            = entry.start_time
+          td
+            = entry.end_time
+          td
+            = entry.term
+          td
+            = entry.amount
+          td
+            = entry.entry_details.map{|r| r.course.name}.join
+          /td
+          /  = entry.deleted_at
+          /td
+          /  = entry.created_at
+          /td
+          /  = entry.updated_at
+          td
+            = link_to 'Show', entry
+          td
+            = link_to 'Edit', edit_entry_path(entry) 
+          td
+            = link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } 
+
+div#calendar

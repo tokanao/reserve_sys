@@ -1,0 +1,6 @@
+create_table "users", force: :cascade, comment: "" do |t|
+  t.string   "name",        comment: ""
+  t.datetime "deleted_at", comment: "削除フラグ"
+  t.datetime "created_at", comment: "作成日"
+  t.datetime "updated_at", comment: "更新日"
+end

@@ -1,0 +1,24 @@
+.nested-fields.form-group
+  button class="btn" type="button" @click="addRow"
+    | Add
+
+  .form-inline v-for="(detail, i) in details" class="col-md-offset-2 col-md-8"
+    input type="hidden" v-bind:name="'entry[entry_details_attributes][' + i + '][id]'" v-model="detail.id"
+
+    / HACK: style tag to css
+    = select_tag :course, options_for_select(Course.all.map{|m| [m.name, m.id, {'data-price': m.price}]}),
+        class: 'form-control',
+        'v-bind:name': "'entry[entry_details_attributes][' + i + '][course_id]'",
+        'v-model': 'detail.course_id',
+        'v-on:change': "changeCourse(i)",
+        'ref': 'prices',
+        style: 'width: 200px;'
+
+    input class="form-control" type="text" v-bind:name="'entry[entry_details_attributes][' + i + '][count]'" v-model="detail.count" v-on:change='changeCount(i)' style='width: 50px;'
+    input class="form-control" type="text" v-bind:name="'entry[entry_details_attributes][' + i + '][charge]'" v-model="detail.charge" style='widht: 100px;'
+    button class="btn" type="button" @click="delRow(detail, i)"
+      | Remove
+  template v-for="(id, i) in details_destroy_ids"
+    input type="hidden" v-bind:name="'entry[entry_details_attributes][' + (details.length + i) + '][id]'" v-bind:value="id"
+    input type="hidden" v-bind:name="'entry[entry_details_attributes][' + (details.length + i) + '][_destroy]'" value="1"
+

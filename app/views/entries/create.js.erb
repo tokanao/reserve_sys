@@ -1,0 +1,7 @@
+$('.entry-form').dialog('close');
+registCalendarEvent(
+    '<%= @entry.id %>',
+    '<%= @entry.customer.full_name %>',
+    '<%= @entry.start_time %>',
+    '<%= @entry.end_time %>',
+    '<%= @entry.resource.color %>');

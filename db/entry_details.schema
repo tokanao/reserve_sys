@@ -1,0 +1,12 @@
+create_table :entry_details do |t|
+  t.integer   :entry_id
+  t.integer   :course_id
+  t.integer   :count,     comment: "人数"
+  t.integer   :charge,    comment: "金額"
+  t.text      :note,      comment: "コース説明"
+  t.datetime :deleted_at, comment: "削除フラグ"
+  t.timestamps
+end
+
+add_index "entry_details", ["entry_id"], name: "idx_entry_id", using: :btree
+add_index "entry_details", ["course_id"], name: "idx_course_id", using: :btree

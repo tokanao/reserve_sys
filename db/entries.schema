@@ -1,0 +1,17 @@
+create_table "entries", force: :cascade, comment: "" do |t|
+  t.string    :name
+  t.integer   :resource_id
+  t.integer   :customer_id
+  t.string    :status
+  t.datetime  :start_time
+  t.datetime  :end_time
+  t.integer   :term
+  t.integer   :amount,        commnet: "金額"
+  t.text      "note",         commnet: "備考"
+  t.datetime "deleted_at", comment: "削除フラグ"
+  t.datetime "created_at", comment: "作成日"
+  t.datetime "updated_at", comment: "更新日"
+end
+
+add_index "entries", ["resource_id"], name: "idx_resource_id", using: :btree
+add_index "entries", ["customer_id"], name: "idx_customer_id", using: :btree

@@ -1,0 +1,25 @@
+= simple_form_for(@customer, html: { class: 'form-horizontal' }) do |f|
+  - ar_errors(@customer)
+
+  .form-inputs
+    = f.input :status
+    = f.input :last_name
+    = f.input :first_name
+    = f.input :last_kana
+    = f.input :first_kana
+    = f.input :gender
+    = f.input :birth
+    = f.input :zip1
+    = f.input :zip2
+    = f.input :addr1
+    = f.input :addr2
+    = f.input :addr3
+    = f.input :tel1
+    = f.input :tel2
+    = f.input :tel3
+    = f.input :email
+    = f.input :note
+
+  .form-actions
+    .col-sm-offset-2
+      = f.button :submit, class: 'btn btn-primary'

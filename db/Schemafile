@@ -1,0 +1,7 @@
+require 'systems.schema'
+require 'users.schema'
+require 'resources.schema'
+require 'courses.schema'
+require 'customers.schema'
+require 'entries.schema'
+require 'entry_details.schema'

@@ -1,0 +1,6 @@
+@import "bootstrap-variables";
+
+// JQuery UI dialog がサイドメニューに隠れてしまうのに対応
+div.ui-dialog {
+  z-index: $zindex-modal;
+}

@@ -1,0 +1,14 @@
+.nested-fields
+  .row
+    .col-md-2
+      = link_to_remove_association '', f, class: 'btn btn-link glyphicon glyphicon-minus'
+    .col-md-4
+      = f.association :course, collection: Course.all.pluck(:name, :price),
+        label: false, input_html: { 'v-model': 'fields[0]', 'v-bind:value':'fields.value', 'v-on:change': 'changeCourse' }
+        /label: false, input_html: { 'v-model': 'price', 'v-on:change': 'changeCourse' }
+      /= f.association :course, label: false, input_html: { 'v-model': 'price', 'v-on:change': 'changeCourse' }
+        
+    .col-md-2
+      = f.input :count, label: false, input_html: { 'v-model': 'count' }
+    .col-md-2 
+      = f.input :charge, label: false, input_html: { 'v-model': 'charge' }

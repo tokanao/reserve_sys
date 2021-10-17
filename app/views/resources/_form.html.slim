@@ -1,0 +1,11 @@
+= simple_form_for(@resource, html: { class: 'form-horizontal' }) do |f|
+  - ar_errors(@resource)
+
+  .form-inputs
+    = f.input :name
+    = f.input :color
+    = f.input :note
+
+  .form-actions
+    .col-sm-offset-2
+      = f.button :submit, class: 'btn btn-primary'

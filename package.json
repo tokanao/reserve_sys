@@ -1,0 +1,16 @@
+{
+  "name": "demo_app",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.2.1",
+    "coffeescript": "^2.1.1",
+    "element-ui": "^2.0.11",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0",
+    "vue-superagent": "^1.2.0",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.11.1"
+  }
+}

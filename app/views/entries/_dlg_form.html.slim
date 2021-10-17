@@ -1,0 +1,25 @@
+= simple_form_for(@entry, html: { class: 'form-horizontal' }, remote:true) do |f|
+  - ar_errors(@entry)
+
+  / HACK: similar _form.html.slim
+  .form-inputs
+    = f.input :name
+    = f.association :resource
+    = f.association :customer, label_method: :name
+    = f.input :start_time, as: :date_picker
+    = f.input :end_time, as: :date_picker
+    = f.input :term
+    = f.input :status
+
+    = render 'detail_fields_with_vue'
+    /= f.simple_fields_for :entry_details do |detail|
+    /  = render 'entry_detail_fields', f: detail
+    /.links
+    /  = link_to_add_association '　人数追加', f, :entry_details, class: 'btn btn-link glyphicon glyphicon-plus'
+
+    = f.input :amount
+    = f.input :note
+
+  .form-actions
+    .col-sm-offset-2
+      = f.button :submit, class: 'btn btn-primary'

@@ -1,0 +1,71 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="description" content=""
+    meta name="author" content=""
+    title
+      | Starter Template for Bootstrap
+    /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      = javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
+    /= include_gon(:init => true)
+    = include_gon
+    = stylesheet_link_tag    'application', media: 'all'
+    = partial_stylesheet_link_tag controller.controller_name, controller.action_name
+    = javascript_include_tag 'application'
+    /= javascript_pack_tag 'entries_vue'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+            span.sr-only
+              | Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to "Project name", "#", class: "navbar-brand"
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a href="#{System.first.site_url}" target="_new"
+                | Home page
+            li
+              a href="/systems"
+                | Systems
+            li
+              a href="/resources"
+                | Resources
+            li
+              a href="/courses"
+                | Courses
+            li
+              a href="/customers"
+                | Customers
+            li
+              a href="/entries"
+                | Entries
+            li
+              a href="/requests/new"
+                | Requests
+
+    .container-fluid
+      .row
+        .col-sm-3.col-md-2.sidebar
+          / NOTE: ユーザー毎に切り替えが必要な場合、content_for の使用を検討する
+          = render'layouts/side_menu'
+
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          - flash.each do |name, msg|
+            = content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
+              button.close type="button" data-dismiss="alert"
+                span aria-hidden="true"
+                  | &times;
+                span.sr-only
+                  | Close
+              = msg
+          = yield

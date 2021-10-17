@@ -1,0 +1,51 @@
+.page-header
+  = link_to new_resource_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Resource
+  h1
+    | Listing resources
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Id
+        th
+          | Name
+        th
+          | Color
+        th
+          | Note
+        th
+          | Deleted at
+        th
+          | Created at
+        th
+          | Updated at
+        th
+        th
+        th
+    tbody
+      - @resources.each do | resource |
+        tr
+          td
+            = resource.id
+          td
+            = resource.name
+          td
+            = resource.color
+          td
+            = resource.note
+          td
+            = resource.deleted_at
+          td
+            = resource.created_at
+          td
+            = resource.updated_at
+          td
+            = link_to 'Show', resource
+          td
+            = link_to 'Edit', edit_resource_path(resource) 
+          td
+            = link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } 

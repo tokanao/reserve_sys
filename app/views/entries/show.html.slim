@@ -1,0 +1,50 @@
+.page-header
+  = link_to entries_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_entry_path(@entry), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show entry
+dl.dl-horizontal
+  dt
+    | Id:
+  dd
+    = @entry.id
+  dt
+    | Resource:
+  dd
+    = @entry.resource_id
+  dt
+    | Customer:
+  dd
+    = @entry.customer_id
+  dt
+    | Name:
+  dd
+    = @entry.name
+  dt
+    | Start time:
+  dd
+    = @entry.start_time
+  dt
+    | Term:
+  dd
+    = @entry.term
+  dt
+    | Amount:
+  dd
+    = @entry.amount
+  dt
+    | Deleted at:
+  dd
+    = @entry.deleted_at
+  dt
+    | Created at:
+  dd
+    = @entry.created_at
+  dt
+    | Updated at:
+  dd
+    = @entry.updated_at

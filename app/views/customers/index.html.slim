@@ -1,0 +1,109 @@
+.page-header
+  = link_to new_customer_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Customer
+  h1
+    | Listing customers
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover.datatable
+    thead
+      tr
+        th
+          | Id
+        th
+          | status
+        th
+          | Last name
+        th
+          | First name
+        th
+          | Last kana
+        th
+          | First kana
+        th
+          | Gender
+        th
+          | Birth
+        th
+          | Zip1
+        th
+          | Zip2
+        th
+          | Addr1
+        th
+          | Addr2
+        th
+          | Addr3
+        th
+          | Tel1
+        th
+          | Tel2
+        th
+          | Tel3
+        th
+          | Email
+        th
+          | Note
+        th
+          | Deleted at
+        th
+          | Created at
+        th
+          | Updated at
+        th
+        th
+        th
+    tbody
+      - @customers.each do | customer |
+        tr
+          td
+            = link_to "#{customer.id}", edit_customer_path(customer) 
+          td
+            = customer.status_text
+          td
+            = customer.last_name
+          td
+            = customer.first_name
+          td
+            = customer.last_kana
+          td
+            = customer.first_kana
+          td
+            = customer.gender
+          td
+            = customer.birth
+          td
+            = customer.zip1
+          td
+            = customer.zip2
+          td
+            = customer.addr1
+          td
+            = customer.addr2
+          td
+            = customer.addr3
+          td
+            = customer.tel1
+          td
+            = customer.tel2
+          td
+            = customer.tel3
+          td
+            = customer.email
+          td
+            = customer.note
+          td
+            = customer.deleted_at
+          td
+            = customer.created_at
+          td
+            = customer.updated_at
+          td
+            = link_to 'Show', customer
+          td
+            = link_to 'Edit', edit_customer_path(customer) 
+          td
+            = link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } 
+
+div#calendar
